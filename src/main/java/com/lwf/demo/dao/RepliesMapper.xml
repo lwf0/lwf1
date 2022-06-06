@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwf.demo.dao.RepliesMapper">
+    <select id="finReplisByInfoId" resultType="com.lwf.demo.pojo.Replies">
+        select * from replies where infoId=#{infoId}
+    </select>
+
+    <insert id="insertReplies" parameterType="com.lwf.demo.pojo.Replies">
+       insert into replies(content,replyTime,infoId)  values(#{content},#{replyTime},#{infoId})
+    </insert>
+</mapper>
